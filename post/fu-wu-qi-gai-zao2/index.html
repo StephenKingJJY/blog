@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>服务器改造 | SK&#39;s Blog</title>
+<link rel="shortcut icon" href="https://www.wiwy.us/favicon.ico?v=1705567302035">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.wiwy.us/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="服务器改造 | SK&#39;s Blog - Atom Feed" href="https://www.wiwy.us/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="现在服务器改造的事情告一段落，有时间来写一下总结了。
+服务器NAS化改造
+事情的起源来自于我购买了一台投影仪，需要搭建自己的影音库，因为还想着在外网访问，又没有钱😯，所以选择将自己的服务器改造成nas。因为像这个博客以及hair的官网，都..." />
+    <meta name="keywords" content="生活,服务器" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://www.wiwy.us">
+  <img class="avatar" src="https://www.wiwy.us/images/avatar.png?v=1705567302035" alt="">
+  </a>
+  <h1 class="site-title">
+    SK&#39;s Blog
+  </h1>
+  <p class="site-description">
+    懂点技术的传统文人
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://jingle.bio/aaa-DaiMav" class="menu" target="_blank">
+          关于
+        </a>
+      
+    
+      
+        <a href="https://github.com/StephenKingJJY" class="menu" target="_blank">
+          Github
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              服务器改造
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-01-18
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://www.wiwy.us/tag/jl-sea2bs/" class="post-tag">
+                  # 生活
+                </a>
+              
+                <a href="https://www.wiwy.us/tag/WR3sDS5ls/" class="post-tag">
+                  # 服务器
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://www.wiwy.us/post-images/fu-wu-qi-gai-zao2.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>现在服务器改造的事情告一段落，有时间来写一下总结了。</p>
+<h2 id="服务器nas化改造">服务器NAS化改造</h2>
+<p>事情的起源来自于我购买了一台投影仪，需要搭建自己的影音库，因为还想着在外网访问，<s>又没有钱😯</s>，所以选择将自己的服务器改造成nas。因为像这个博客以及hair的官网，都不是直接部署在服务器上的，而是通过[render.com][http://render.com]容器化，省钱，所以服务器本质上还是闲置的。</p>
+<p>首先是nas工具的选型，因为考虑到香港服务器内地访问延迟的问题，打算采用cloudreve链接oss的方式，这样读取的时候可以直接走oss的流量不会经过服务器。我购买了打折的oss预留空间，将整个环节都跑通了，又安装了aira2工具，使用起来非常顺畅。问题是，买预留空间的时候没有关注到地域不包括香港，没法利用服务器的上传带宽，并且下载流量还需要额外的流量包，流量包本身是按月清零的，其价格比存储要贵许多。</p>
+<p>考虑到阿里云oss空间加流量的成本已经比购买云盘会员还要贵了，所以第二回合我直接购买了限制较少口碑不错的阿里云盘年费会员。10t的空间+不限流量，整体上比oss要好太多，阿里云盘本身也是基于阿里云自己的oss在北京地区的服务，它有一定的成本优势。因为我买的oss预留空间还有大半年才会到期，所以不着急迁移存储，保留了一些不适合公开的内容😋。cloudreve不知道为啥，对接的存储能力已经很久不更新了（我记得大概两三年前就是这些类S3的桶），相比之下新出来的alist要好很多，有很多存储驱动（实际上也出来很久了，玩软路由的应该接触的比较多），最重要的能力就是对接现有的网盘工具，阿里啊百度之类的，百度网盘限速太过严重，阿里云盘还是不错的。虽然因为cloudreve的存储结构跟alist不太一样，导致不能使用alist直接连oss读取直接存储的数据，但alist可以通过链接cloudreve再链接oss，算是非常实用了。</p>
+<h2 id="播放与刮削">播放与刮削</h2>
+<p>投影设备是基于安卓tv的，一开始我下载了比较常用的kodi去播放alist中的内容（webdav），但kodi使用方法比较反人类，播放时又经常卡顿，后面切换了新的播放工具novaplayer完美解决了问题。刮削工具一开始选择了radar系列套件，后来选择了tMM（tinyMediaManager）手工刮削。</p>
+<p>在使用radar套件的过程中发现了jellyseerr工具，界面比较现代，可以进行搜索和自动下载刮削，感觉非常适合在移动端上使用，当时正好因为公司不提供wifi了而购买了一个随身wifi。所以考虑将其部署在mac上，通过24h的移动wifi提供内网穿透，进而在手机上访问。ngrok是比较常见的免费方案。此外，在github上搜寻过之后发现了nps这样的私有化部署工具，于是在自己的香港服务器上部署了，虽然有一些卡顿和服务中断，但是至少是有可用性的。</p>
+<h2 id="终极方案">终极方案</h2>
+<p>这用可用性并未保持很久。首先是移动wifi的流程成本过高，换成了手机流量卡，放在公司的电脑就无法一直使用手机的流量提供服务。而且jellyseerr通过bittorrent的下载速度非常缓慢，大量的媒体通过自动化搜索的方式也没有资源可以下载。最终我们想到，既然是利用了阿里云盘去存储，为什么不直接转存阿里云盘的资源呢，通过搜索，我们发现了一些现成的阿里云盘资源搜索和汇总站。</p>
+<p>对于内容不够的问题，我还找到了小雅alist分享这个公开的资源，通过alist挂载alist套娃的形式使用。</p>
+<p>播放端我们还引入了tvbox这样现成的工具，在pc、mac和移动端都有一些同类产品，通过免费接口，将直播和点播功能一起解决，数据更新还挺及时，使用比较简单，甚至可以给父母去用。</p>
+<p>最后，是油管播放的问题。因为女朋友要看油管视频，但是不会翻墙，所以我打算将外网视频下载到服务器上，因为是香港的服务器，30MB带宽，下载速度还是比较快的。因为是敏感视频，而且服务器的空间也不够，所以下载到服务器之后，会再次上传到oss。因为我俩看的油管频道比较固定，所以希望做成频道更新后可以自动下载并进行提醒的功能。在调研了一番之后，决定采用n8n，这是一种自动化工具，相对于直接用测试工具写网页脚本还是更简单一点。</p>
+<h2 id="总结">总结</h2>
+<p>折腾服务器本身是一种乐趣，学习到nas相关的技术，最低成本解决娱乐需求。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E5%99%A8nas%E5%8C%96%E6%94%B9%E9%80%A0">服务器NAS化改造</a></li>
+<li><a href="#%E6%92%AD%E6%94%BE%E4%B8%8E%E5%88%AE%E5%89%8A">播放与刮削</a></li>
+<li><a href="#%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88">终极方案</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://www.wiwy.us/post/zheng-quan-xing-ye-shi-chang-dong-cha/">
+              <h3 class="post-title">
+                证券行业市场洞察
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '1ed9c0b67896e24561f8',
+    clientSecret: 'fbb8391f553b6adbf44d794d55917ba6f024fdd0',
+    repo: 'blog',
+    owner: 'StephenKingJJY',
+    admin: ['StephenKingJJY'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  
+  <a class="rss" href="https://www.wiwy.us/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

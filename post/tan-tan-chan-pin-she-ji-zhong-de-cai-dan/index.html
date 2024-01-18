@@ -1,0 +1,239 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>谈谈产品设计中的菜单 | SK&#39;s Blog</title>
+<link rel="shortcut icon" href="https://www.wiwy.us/favicon.ico?v=1705567302035">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.wiwy.us/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="谈谈产品设计中的菜单 | SK&#39;s Blog - Atom Feed" href="https://www.wiwy.us/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="本文修改于作者进行的一次产品经理培训的文字讲稿，故而有部分口语化的内容，希望读者谅解。
+今天我们来讲产品设计中的菜单模块，我理解的对菜单的定义就是它是对大量操作收纳的一种形式，这些操作背后的信息往往不是用户都关注的，不然用户会直接使用列表，..." />
+    <meta name="keywords" content="工作" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://www.wiwy.us">
+  <img class="avatar" src="https://www.wiwy.us/images/avatar.png?v=1705567302035" alt="">
+  </a>
+  <h1 class="site-title">
+    SK&#39;s Blog
+  </h1>
+  <p class="site-description">
+    懂点技术的传统文人
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://jingle.bio/aaa-DaiMav" class="menu" target="_blank">
+          关于
+        </a>
+      
+    
+      
+        <a href="https://github.com/StephenKingJJY" class="menu" target="_blank">
+          Github
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              谈谈产品设计中的菜单
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-09-20
+              </span>
+              <span>
+                18 min read
+              </span>
+              
+                <a href="https://www.wiwy.us/tag/osYry5l_q/" class="post-tag">
+                  # 工作
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://www.wiwy.us/post-images/tan-tan-chan-pin-she-ji-zhong-de-cai-dan.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>本文修改于作者进行的一次产品经理培训的文字讲稿，故而有部分口语化的内容，希望读者谅解。</p>
+<p>今天我们来讲产品设计中的菜单模块，我理解的对菜单的定义就是它是对大量操作收纳的一种形式，这些操作背后的信息往往不是用户都关注的，不然用户会直接使用列表，因为列表中的信息都是互相平等而且需要完整展示才有意义的（比如各种统计分析）。此外，菜单项之间通常还会有多层级的关系。这些构成了我们今天所讨论的menu的范围限定。</p>
+<p>一个设计优秀的菜单可以帮助用户：缩小选择的范围。例如合理的菜单项分类，特定场景下对某些项禁用；节省屏幕空间。用户点击一个链接或者按钮，表示自己愿意转移注意力焦点，菜单本身可以堆叠到工作区内容之上，用小空间代替大空间；防止错误的输入。比如导航菜单、比如下拉菜单。用户在不熟悉你的产品时，不知所往，不知所选，菜单可以充当提示作用，防止产品设计人员意料之外的情况出现。</p>
+<p>我把菜单总结为两类，第一类是作为功能入口的菜单，他们的菜单项对应着一个直接确定的功能，比如我点击chrome右上角的三个点打开chrome的设置菜单，我选择打印，这个确定的功能就是打开一个打印预览对话框。这样一个存在于软件顶部的菜单，常见于PC端。并且在传统软件中非常常见。</p>
+<figure data-type="image" tabindex="1"><img src="https://www.wiwy.us/post-images/1695188946794.png" alt="" loading="lazy"></figure>
+<p>大家小时候上计算机课，应该会提到软件界面的组成结构，标题栏、菜单栏、工具栏、工作区和状态栏等等，有个典型的例子就是office办公套件，office在2007之前是非常典型的传统软件设计，顶部菜单是独立的，点击之后有自己的菜单项。office07开始，使用了一种叫Ribbon的全新设计，可以说是大胆放弃了沿用已久的菜单命令式界面。因为Microsoft提供了一个通用的界面库，所以它引领了很多的win上的软件朝这个方向发展。工具栏变成了菜单的一部分，菜单项本身通过tab的形式进行分类和切换，通过模块的划分你还可以明显的看到之前菜单的影子。菜单项本身也有进一步的子项。ribbon的英文含义是丝带，在office里面本质是带有标签的菜单栏和工具栏混合体。为什么要用，这个设计模式的引入主要是因为当时 Office 产品遇到的一些困境：新功能越来越多，但很少有用户发现并使用这些功能。随之而来软件变得越来越复杂，体验一年不如一年，操作效率也越来越低。</p>
+<figure data-type="image" tabindex="2"><img src="https://www.wiwy.us/post-images/1695189166953.png" alt="" loading="lazy"></figure>
+<p>说到菜单，绝对不能错过的计算机菜单就是win的开始菜单，它经典到以至于win8尝试去掉之后，受到大量用户的排斥，直接葬送了一个版本。我们从xp开始看起，因为win95、98、NT这里几乎没有改动，winxp的开始菜单是非常典型的传统软件菜单设计思路，将系统的功能分为几个大模块，包括程序、文档、设置、搜索等等，用户鼠标hover上去会出现对应的菜单项，这个开始菜单背后实际映射了win系统目录下的一个叫“开始菜单”的文件夹，意味着这个时候我们实际上可以用文件的层级关系来理解整个菜单，比如文件名就是菜单名，文件图标就是菜单的icon，文件夹的嵌套关系就是菜单的层级，然后用户选择某个菜单项就是打开对应的文件或者应用程序。</p>
+<figure data-type="image" tabindex="3"><img src="https://www.wiwy.us/post-images/1695189238649.png" alt="" loading="lazy"></figure>
+<p>Win8的失败在于它给了用户一个无法理解的菜单，如果我不去查更新日志和帮助手册，我不能立即知道这些菜单项的排序规律以及不同的磁贴大小所代表的含义，颜色混乱让人觉得界面比较复杂。从本质上来说，它就失去了作为功能收纳的意义，这是我认为win8开始菜单功能被吐槽的根本原因。</p>
+<figure data-type="image" tabindex="4"><img src="https://www.wiwy.us/post-images/1695189256776.png" alt="" loading="lazy"></figure>
+<p>Win10，或者说其实从win7开始，一个明显的变化是系统本身的设置功能和用户自己安装的应用程序被混在了一起，程序和设置的界限被打破了，思考一下为啥要这样处理菜单项分类？我认为与其说是设置中的功能不够常用，不如说是应用程序极大丰富又太过常用了，用户打开开始菜单，就想找到自己所需要的东西，不想再经过额外一个层级的选择，这是基于效率的考虑。然后排序就成了问题，win采用了字母排序，然后win10相对于win7改进的地方在于给用户一个选择 ，将常用程序可以固定在右侧。</p>
+<figure data-type="image" tabindex="5"><img src="https://www.wiwy.us/post-images/1695189277757.png" alt="" loading="lazy"></figure>
+<p>Win11是一个回归，但相比于win8简直清爽太多了，微软学乖了，什么大大小小不同颜色的磁贴，全部不要了，改成了类似于maco启动台的界面，把pin的app简单明确的罗列出来。开始菜单的下半部分是推荐，很类似之前win里的“最近访问”，不清楚逻辑，可能用到了机器学习。</p>
+<figure data-type="image" tabindex="6"><img src="https://www.wiwy.us/post-images/1695189305250.png" alt="" loading="lazy"></figure>
+<p>接下来我们讲web产品中比较常见的导航菜单。像门户网站中简单的navigation，有多级菜单的，选项比较少的时候，有直接列出来的。花哨一点，也有全屏幕的手风琴菜单，主要是一个视觉设计上的考量，菜单的功能逻辑还是比较简单的。在页面有大量文本段落的场景下，会有页面的索引导航，要注意它通常可能是收缩的，在鼠标hover的时候会展开，提供固定功能，并且展现的内容随着页面的滚动而变化。还有一些我们比较关注的c端的互联网产品，比如youtube，它通过分割线来进行菜单项的分类，不得不说跟国内的产品习惯差异还是非常大的，你如果去看爱优腾或者b站，登录、历史记录、收藏什么的往往会放在右上角，中间一般是一个巨大的视频内容的banner，然后将这里的“音乐、体育”等等作为居中的导航列表。B端产品我们拿finebi这个工具举例，就是大家应该比较常接触到的系统化的设计，左侧的大模块，二级的目录树这种，非常常见。</p>
+<p><img src="https://www.wiwy.us/post-images/1695189391012.png" alt="" loading="lazy"><br>
+<img src="https://www.wiwy.us/post-images/1695189406246.png" alt="" loading="lazy"></p>
+<p>还有一种大家可能会忽略的是右键菜单以及在文本编辑工具中比较常见的悬浮菜单。把他俩放在一起，是因为他们通常没有一个明确的触发方式，需要用户去探索，并且跟用户所聚焦的内容有直接的关联，不需要用户把注意力抽离出来。从技术上讲，web端去实现右键菜单和悬浮菜单目前还是比较成熟了，我见到很多产品会用。</p>
+<figure data-type="image" tabindex="7"><img src="https://www.wiwy.us/post-images/1695189433217.png" alt="" loading="lazy"></figure>
+<p>列表的表头筛选菜单。明细表的数据太多了，在现代BI产品拖拉拽、可视化图表流行之前，参数查询和表头筛选是唯二的解法，数据列表、卡片列表等任何列表类型的页面，都可以用于筛选可见项目的数量。最为常见的就是升降序，一般还会有数据字典，像excel那种筛选，好的话会给一个过滤选项，用户点击后会打开一个弹窗，以提供更复杂的条件筛选。注意一般可能还会有一个清除筛选的菜单项，让列表恢复原貌。</p>
+<p>还有一种比较特殊的菜单就是链接式菜单，通常我们所熟知的超链接是一个页面到另一个页面的跳转，现在比较流行的双向跳转，也给予了超链接构建知识图谱的功能，但超链菜单本质还是一种对功能的收纳，我认为之所以有这种链接式的菜单设计，主要还是考虑到界面整体的布局，能让菜单像一个普通文本那样放到一大段文字当中，即它不会像标准下拉菜单那样使得控件内的信息孤立于整体之外。它还比较常见用于页内联动，选择一个菜单项之后链接文本自身也会被替换。</p>
+<p>另外一大类是作为控件的菜单。理论上应该有单独的一篇来讨论表单控件的相关设计，所以我这里就把控件中和菜单这个概念密切相关的一些拿出来给大家做简要说明。首先是单选下拉菜单，最为常见的控件菜单类型，一个带搜索功能的下拉菜单e也可以理解成一个带autocomplete的输入框。多选下拉菜单在菜单层面需要考虑的是菜单项被选择时的呈现方式，这里的贴图给出了两种，一类是选择之后菜单项移除，一类是高亮加勾表示已经被选择。下拉树将树结构带入控件菜单中，这里其实也有单选和多选的问题，还需要考虑菜单中展开收缩的方式，以及在搜索时菜单项的呈现方式。下拉树通常会在一个部门、人员这种层级结构，并且在比如权限配置这样的场景里出现。日期和时间控件咱们就先跳过了。</p>
+<p>我们直接进入第三大章，我们日常在设计产品菜单的时候需要考虑的一些通用功能点，这些思考一般都需要在prd中体现出来或者跟UEUI的同事沟通清楚。首先是影响菜单的外部要素，第一part是菜单的位置。这里我们讨论的内容严格限定在B端WEB端产品当中，主要有三种位置类型，侧边导航在国内的B端产品当中最为常见，将菜单栏放置在左侧，页面布局基本是左右结构，这样做的优点是扩展性较强，多级导航可以流畅展示，可以涵盖很多大而全的产品。侧边导航可以支持折叠操作，折叠之后用户的横向核心空间将会增大，页面的展示效率会大大提高。菜单内视觉起止线路统一，用户可以根据首字母进行排序查找。缺点在于侧边导航文字垂直排列，有悖于眼动的正常视觉方向。月度沉浸感非常容易被打断。顶部导航早期出现于各类门户网站，比如企业官网，各中咨询类网站，有点在于导航为水平布局，阅读方式更贴近眼动的正常阅读顺序，顶部导航通常不会打断用户的阅读行为，对用户的干扰少，导航固定在顶部，使得页面整体稳定，显示分辨率对页面展示的影响程度较小。缺点是同时受导航栏标题文字限制，对于每一个菜单的字数限制严格。横向tab数量少，承载不了太多的菜单数量，超过7个后菜单排布会十分困难，横向空间利用率差。水平导航最好不要超过二级菜单，超过二级菜单，用户的使用成本高。混合菜单，简单来讲，就是将顶部导航与侧边导航进行结合。通常将一级导航菜单放置顶部，通过一级菜单的点击后，展示侧边的二、三级菜单。在一些产品拥有复杂的逻辑关系，菜单之间关系分明的产品中，混合导航也越来越被大众所接受。在导航上，他能够展示三级甚至四级菜单，对于很多大型b端项目，混合导航算是更加合理的选择。对于以后有规划大量功能的产品，采用混合导航的模式，能使之后菜单扩展性更强。缺点是空间被占据了很多，并且左侧和顶部来回交互，操作繁琐。我见到的类似的产品，基本上是顶部去切换不同的系统门户，左侧菜单列出具体的业务操作。</p>
+<p>我特别把顶部菜单的扩展性拿出来讲，这里我举一个帆软的例子，帆软因为面向的客户行业、场景非常丰富，所以采用了插件化的形式，用户可以方便的切换管理系统的主题，这个主题包含了logo、颜色以及功能布局。那么原来菜单是在左侧的（回滚到上面的正常帆软截图），原本的空间是足够的，现在切换主题后变成了顶部菜单，顶部菜单的空间就陡然紧张了，以至于菜单最后出现了一个右向箭头，点击展开更多的菜单项，“更多项”出现在顶部菜单，我觉得是非常奇怪的。然后我们还要注意菜单项的间距和国际化问题。菜单项之间应该有合理美观的间距和大小，保证中外文切换的时候不会出现直接被遮挡的情况，图示采用了省略号结尾的方式，但你肯定不能想象如果是美国人自己做的产品，会出现这种菜单名称显示不全的情况。</p>
+<p>重点来了，菜单项的内容，给大家十六字真言：罗列完整、顺序易懂、层级明确、分类清晰。作为功能入口的菜单，在设计时要注意考虑菜单项的icon、功能对应的快捷键和使用三个点来表示该项被点击后会弹出一个对话框。并且注意导航菜单中每一层菜单项保持在5到9个之间，最多也不要超过2层。实际业务有多层级的，应该通过设计的优化来实现层级的隐藏与合并，从而减少用户的操作负担。另外注意在PRD中明确各个菜单背后对应的功能。这个列表展示了一个可能的菜单设计中，PRD所需要包含的内容，受神兵本身列表功能的限制，这里的菜单层级应该可以有更好的表现形式。</p>
+<p>作为控件的菜单，在菜单项内容上，应该考虑其他、全部等额外的项目，还包括类似于上面时间选择器的二次确认按钮。（滚动到上方相应的位置）。作为控件，要关注菜单项对应的真实值。</p>
+<p>菜单项还可能存在一种持续的状态，这里通常指的是非控件菜单啊，因为控件菜单被选择后必然是持存的，我们举两个例子。菜单项的样式会体现菜单的内容，典型的例子就是字体、字号和颜色。菜单项的文本内容可以说是一样的，通过不同的样式来区分差异。如果你正在设计的是悬浮或者右键菜单，要注意呈现的菜单项、功能点要与用户的焦点内容存在联动。后面这三个小点，产品可以根据自己的想法和交互的意见补充进prd中，不一定要有固定的格式。</p>
+<p>接下来是菜单的展现逻辑，也就是交互部分。我们首先要关注的是菜单的出现消失方式，菜单的触发到底是hover还是click，这里不仅指一级菜单，还指子菜单，子菜单可以与一级菜单有不同的触发方式。hover或者click的对象是什么，是一个按钮还是一个icon，我们要关注何种触发对象会比较容易让用户理解这是一个菜单入口。菜单要向哪个方向展开，如果触发物距离容器边缘非常近了，要思考菜单呈现的内容，是否需要一个更多，一个向下的箭头，或者干脆就变成一个弹窗。菜单弹出的动画速度渐变效果等等，当然这往往不是产品的工作，但产品需要关注UI的这一点。我们通常所谓的弹出式菜单是不会对页面上的其他内容产生影响的，但存在一些菜单的设计会对页面的布局产生干扰，比如类似手风琴菜单。然后我们要特别关注子菜单和父项的层级关系，比如子项出现时父项要不要保留，子项要不要跟父项堆叠等等。在移动端设计时要注意菜单项可触达性以及菜单空间利用率。菜单的样式主要还是视觉的同事来控制，需要关注不同层级之间要不要做菜单样式的区别， 鼠标hover菜单之后的高亮效果，以及需不需要像win11一样把开始菜单改成毛玻璃的效果。</p>
+<p>还有一些特殊的菜单项需要在产品设计的时候关注，我们这里拿腾讯云这种大菜单举例，国内云服务商导航菜单基本都是这类设计方法。第一点是给客户提供常用推荐，可以根据业务来推荐，比如云计算这里理应推荐云服务器，还可以让用户主动去收纳，比如开始菜单磁贴，比如让用户去星标一些常用功能。还可以根据机器学习来协同召回。其二，菜单还可以作为需要推广业务的广告位，比如这里的相关解决方案。其三是菜单项可能会包含搜索模块，这个不仅仅是带模糊搜索的控件菜单，现在导航菜单也可以自带搜索功能。</p>
+<p>接下来是菜单项的权限问题，这个一般的权限控制方法大家可以看后面应该会有单独的权限模块分享，这里我提两点。一个是我们需要注意没有权限的菜单项的处理方式，一般情况下当某个选项被禁用或者不可用时，应将其显示为灰色，而不是将其删除。如果删除了这些禁用项，界面将会失去一致性，并使用户更难学习，他们可能仅仅由于禁用项消失而找不到所需要的功能，因为丢失菜单项会影响项目的顺序、层级和菜单整体的布局。大家可以回想一下右键菜单哈，是不是大部分情况下，剪切和复制都是在的，哪怕这个目标实际不能够剪切。</p>
+<figure data-type="image" tabindex="8"><img src="https://www.wiwy.us/post-images/1695189469200.png" alt="" loading="lazy"></figure>
+<p>菜单项可以自定义，为了解决功能冗余的问题，这个也是越来越常见了，所以我单独拿出来作为一项，大家可以考虑。比如给客户提供一个“我的菜单”，用户可以自由的星标自己的常用功能，用户点击菜单项之后，可以快速跳转自己所需的功能。比如印象笔记。如果你的产品是一个后端管理系统，那么一般会有一个系统管理员的角色，他会去按照部门或者角色来分配对应的权限，比如帆软的权限配置管理界面。</p>
+<p><img src="https://www.wiwy.us/post-images/1695189516170.png" alt="" loading="lazy"><br>
+<img src="https://www.wiwy.us/post-images/1695189520481.png" alt="" loading="lazy"></p>
+<p>以上就是我关于菜单功能思考的全部内容。</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://www.wiwy.us/post/bao-xian-ye-shi-chang-dong-cha/">
+              <h3 class="post-title">
+                保险业市场洞察
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '1ed9c0b67896e24561f8',
+    clientSecret: 'fbb8391f553b6adbf44d794d55917ba6f024fdd0',
+    repo: 'blog',
+    owner: 'StephenKingJJY',
+    admin: ['StephenKingJJY'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  
+  <a class="rss" href="https://www.wiwy.us/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
